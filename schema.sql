@@ -3,11 +3,11 @@ DROP TABLE REVIEW;
 DROP TABLE BESTSELLER_LIST;
 DROP TABLE book;
 DROP TABLE publisher;
-DROP TABLE author
+DROP TABLE authors;
 
-CREATE TABLE author (
+CREATE TABLE authors (
     "id" INT PRIMARY KEY  NOT NULL,
-    "author" VARCHAR   NOT NULL
+    "authors" VARCHAR   NOT NULL
 );
 
 CREATE TABLE publisher (
@@ -25,7 +25,7 @@ CREATE TABLE book (
 	"num_pages" INT NOT NULL,
     "author_id" INT   NOT NULL,
 	FOREIGN KEY (publisher_id) REFERENCES Publisher(id),
-	FOREIGN KEY (author_id) REFERENCES public.Author(id)
+	FOREIGN KEY (author_id) REFERENCES public.Authors(id)
 );
 
 CREATE TABLE bestseller_list (
